@@ -1,0 +1,170 @@
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color:#f44336;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    background-color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+h1{
+    text-align: center;
+    margin: 0 0 50px;
+    padding: 20px;
+    background-color: white;
+    font-weight: bold;
+}
+
+.message{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    span{
+        color: var(--primary-color);
+    font-size: 30px;
+    position: relative;
+  &:after {
+    --deco-height: 0.3125em;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: calc(var(--deco-height) * -0.625);
+    height: var(--deco-height);
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M-17 30.5C-1 22 72-4 54 13 37.9 28.2-2.5 57.5 16 55.5s72-29 104-40' stroke='%2300FDCF' stroke-width='10'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h100v64H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    background-size: auto 100%;
+    background-repeat: round;
+    background-position: 0em;
+    }
+}
+}
+
+.container{
+    width: 1200px;
+    background-color: #eee;
+}
+
+
+.guess-game{
+    width: 1100px;
+    text-align: center;
+    display: flex;
+    margin: 20px auto;
+    align-items: flex-start;
+    justify-content: space-between;
+    .game-area{
+        text-align: center;
+        .inputs{
+            > div{
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                span{
+                    font-size: 30px;
+                    margin-right: 15px;
+                    font-weight: bold;
+                }
+            }
+            .disabled-inputs{
+                opacity: 0.5;
+                pointer-events: none;
+            }
+
+            input{
+                margin: 0 5px;
+                width: 70px;
+                height: 70px;
+                font-size: 50px;
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+                caret-color: var(--primary-color);
+                border: none;
+                border-bottom: 3px solid black;
+                background-color: white;
+            }
+            input.in-place{
+                background-color: #f89e13;
+            }
+            input.not-in-place{
+                background-color: #18ba89;
+            }
+
+            input.no{
+                background-color: #27303f;
+            }
+        }
+        .control{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-left: 10%;
+            width: 500px;
+            button{
+                border: none;
+                border-radius: 6px;
+                color: white;
+                font-size: 25px;
+                font-family: Arial, Helvetica, sans-serif;
+                cursor: pointer;
+                font-weight: bold;
+                padding: 20px;
+            }
+
+            .check{
+                background-color: var(--primary-color);
+                width: 400px;
+            }
+            .hint{
+                background-color: #009688;
+                width: 150px;
+            }
+        }
+    }
+
+    .key-colors{
+        margin-left: 10%;
+        .key-color{
+            width: 400px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            background-color: white;
+            padding: 15px;
+            .key{
+                width: 15%;
+                height: 50px;
+                margin-right: 10px;
+                &.in-place{
+                    background-color: #f89e13;
+                }
+                &.not-in-place{
+                    background-color: #18ba89;
+                }
+
+                &.no{
+                    background-color: #27303f;
+                }
+            }
+            .key-text{
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+
+    }
+}
+
+
